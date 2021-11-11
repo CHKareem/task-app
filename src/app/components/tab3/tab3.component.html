@@ -1,0 +1,41 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="card-container">
+
+  <div class="div-main1">
+  <p class="mat-title head-text">daily report - monthly</p>
+    <mat-select class="card-select card-small">
+      <mat-option *ngFor="let year of years" [value]="year.value">
+        {{year.viewValue}}
+      </mat-option>
+    </mat-select>
+
+    <div class="div-title"><p class="p-title">status</p><p class="p1-title">send:date</p></div>
+
+<button class="card card-small" *ngFor="let item of buttonsLink; let i=index"
+(click)="setVal(i)"><p class="data"  [attr.data-id]="item.ul"></p><p class="button-text">{{item.date}}</p>
+  <p [ngStyle]="{'color':item.color}" class="button-text">{{item.status}}</p>
+  <p class="button-text">{{item.datetime}}</p>
+<mat-icon class="icon">{{item.icon}}</mat-icon></button>
+
+</div>
+
+<div  class="div-main2">
+
+<div class="card-view card-small center">
+
+  <span *ngIf="!attrVal">
+  <p class="mat-caption" style="color: rgb(141,141,141);font-weight: bold;">not selected.</p>
+  <p class="mat-caption" style="margin-top: 1.5em;color:rgb(141,141,141);font-weight: bold;">
+  <mat-icon>description</mat-icon>select the report you want to process</p>
+</span>
+<object data="" type="text/html" class="objs"></object>
+
+<h3>{{attrVal}}</h3>
+</div>
+
+</div>
+
+  </div>

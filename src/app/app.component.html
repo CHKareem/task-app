@@ -1,0 +1,17 @@
+
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+  *ngFor="let links of navLinks"
+  [routerLink]="links.link"
+  routerLinkActive #rla="routerLinkActive"
+  [active]="rla.isActive">
+  <mat-icon class="icon">{{links.icon}}</mat-icon>
+ {{links.linkName}}
+</a>
+</nav>
+
+<router-outlet></router-outlet>
